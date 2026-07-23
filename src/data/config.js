@@ -11,7 +11,7 @@ export const IDENTITY = {
   location: "Butwal,Deepnagar, Nepal",
   roles: [
     "Student",
-    "AI Engineer",
+    "AI-ML Engineer",
     "GenAI / RAG Builder",
     "Full-Stack Developer",
     "Computer Vision Tinkerer",
