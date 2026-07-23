@@ -13,7 +13,7 @@ export const IDENTITY = {
     "Student",
     "AI-ML Engineer",
     "GenAI / RAG Builder",
-    "Full-Stack Developer",
+    "Frontend Developer",
     "Computer Vision Tinkerer",
   ],
   tagline:
