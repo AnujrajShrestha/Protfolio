@@ -53,7 +53,7 @@ export default function Projects({ repos, status, lastSynced, resync }) {
         <div className="rounded-xl border border-fault/40 bg-fault/5 p-6 text-sm text-fault">
           Couldn't reach the GitHub API right now — this is usually a rate limit or a network hiccup, not a broken
           site. Refresh in a minute, or browse repos directly on{" "}
-          <a href="https://github.com/bhusal7" className="underline" target="_blank" rel="noopener">
+          <a href="https://github.com/AnujrajShrestha" className="underline" target="_blank" rel="noopener">
             github.com/bhusal7
           </a>
           .
@@ -69,7 +69,7 @@ export default function Projects({ repos, status, lastSynced, resync }) {
       )}
 
       <p className="mt-8 text-center text-[11px] text-muted">
-        This grid isn't hand-maintained — it reads {`{`}api.github.com/users/bhusal7/repos{`}`} on every visit, so a
+        This grid isn't hand-maintained — it reads {`{`}api.github.com/users/anuj/repos{`}`} on every visit, so a
         repo pushed five minutes ago shows up here, not just at the next deploy.
       </p>
     </section>
