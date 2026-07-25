@@ -1,4 +1,4 @@
-# bhusal7 — portfolio
+# Anuj — portfolio
 
 React (Vite) portfolio for Vashudev Bhusal. Dark hacker/terminal aesthetic,
 GSAP + Framer Motion + Lenis for motion, and **GitHub as the CMS** — repos

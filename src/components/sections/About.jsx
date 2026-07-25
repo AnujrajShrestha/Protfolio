@@ -33,7 +33,7 @@ export default function About() {
               ["role", "AI Engineer (aspiring)"],
               ["location", IDENTITY.location],
               ["open to", IDENTITY.status],
-              ["stack", "JAvascript · Python · AI - ML"],
+              ["stack", "Javascript · Python · AI - ML"],
               ["currently", "shipping GenAI tools"],
             ].map(([k, v]) => (
               <div key={k} className="flex items-center justify-between py-3">
