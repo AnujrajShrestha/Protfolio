@@ -58,7 +58,7 @@ export const SKILL_GROUPS = [
     items: [
       { name: "python", level: 92 },
       { name: "javascript", level: 85 },
-      { name: "typescript", level: 70 },
+      { name: "C++", level: 60 },
       { name: "c", level: 60 },
       { name: "php", level: 55 },
     ],
