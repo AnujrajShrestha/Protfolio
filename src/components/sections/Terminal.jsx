@@ -37,7 +37,7 @@ export default function Terminal({ repos, resync }) {
       help: () => TERMINAL_HELP.replace(/\n/g, "<br/>"),
       whoami: () => `Anuj Shrestha — Aspiring AI Engineer · Butwal, Nepal`,
       about: () => (scrollTo("about"), "Loading about.md ..."),
-      skills: () => (scrollTo("skills"), "Attaching to process monitor ..."),
+      tech_stacks: () => (scrollTo("stacks"), "Attaching to process monitor ..."),
       projects: () => (scrollTo("projects"), repos.length ? `Repositories (live): ${repoNames}` : "Fetching from GitHub ..."),
       ls: () => (repos.length ? repos.map((r) => `<span class="text-wire">${r.name}</span>  <span class="text-muted">${r.language || ""}</span>`).join("<br/>") : "no repos loaded yet"),
       sync: () => (resync(), "Re-syncing with api.github.com/users/AnujrajShrestha/repos ..."),

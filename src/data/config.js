@@ -35,7 +35,7 @@ export const SOCIALS = [
 
 export const NAV_LINKS = [
   { id: "about", label: "about" },
-  { id: "skills", label: "skills" },
+  { id: "stacks", label: "Teach Stacks" },
   { id: "projects", label: "projects" },
   { id: "activity", label: "activity" },
   { id: "contact", label: "contact" },
@@ -52,50 +52,37 @@ export const PROJECT_FILTERS = [
   { key: "web", label: "web", match: ["javascript", "typescript", "html", "css"] },
 ];
 
-export const SKILL_GROUPS = [
+export const TECH_STACKS = [
   {
-    group: "languages",
-    items: [
-      { name: "python", level: 92 },
-      { name: "javascript", level: 85 },
-      { name: "C++", level: 60 },
-      { name: "c", level: 60 },
-      { name: "php", level: 55 },
-    ],
+    category: "Frontend",
+    items: ["HTML", "CSS", "JavaScript","tailwindcss","famer-motion","typescript", "GSAP", "React"],
   },
   {
-    group: "ML / DL",
-    items: [
-      { name: "tansorflow", level: 65 },
-      { name: "scikit-learn", level: 84 },
-      { name: "pandas / numpy", level: 70 },
-      { name: "matplotlib / seaborn", level: 72 },
-    ],
+    category: "Backend",
+    items: ["Express.js", "Node.js", "FastAPI"],
   },
   {
-    group: "web / backend",
-    items: [
-      { name: "react", level: 70 },
-      { name: "fastapi", level: 80 },
-      { name: "django", level: 65 },
-      { name: "express / node", level: 68 },
-    ],
+    category: "Database",
+    items: ["MongoDB", "SQL", "PostgreSQL"],
   },
   {
-    group: "data / tools",
-    items: [
-      { name: "mongodb / mysql", level: 75 },
-      { name: "git / github", level: 95 },
-      { name: "vercel / anaconda", level: 60 },
-      { name: "postman / power bi", level: 58 },
-    ],
+    category: "Deployment & Tools",
+    items: ["Vercel", "Render", "Git", "GitHub", "Postman"],
+  },
+  {
+    category: "Data Science & AI",
+    items: ["NumPy", "Pandas", "Matplotlib", "Seaborn", "Scikit-Learn", "TensorFlow", "GenAI", "Agentic AI", "SciPy"],
+  },
+  {
+    category: "Programming Languages",
+    items: ["JavaScript", "Python", "C", "C++", "PHP"],
   },
 ];
 
 export const TERMINAL_HELP = `Available commands:
   whoami          identity
   about           jump to about
-  skills          jump to skills
+  tech_stacks     jump to stacks
   projects        list + jump to repositories
   contact         jump to contact
   social          list social links

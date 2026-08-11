@@ -1,53 +1,107 @@
-import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SectionHeading from "../ui/SectionHeading.jsx";
-import { SKILL_GROUPS } from "../../data/config.js";
+import { TECH_STACKS } from "../../data/config.js";
+import { 
+  Layout, 
+  Server, 
+  Database, 
+  Terminal, 
+  Cpu, 
+  Code2, 
+  Layers 
+} from "lucide-react";
 
-let pidCounter = 0;
+gsap.registerPlugin(ScrollTrigger);
+
+// Dynamic mapping of categories to clean developer icons
+const ICON_MAP = {
+  "Frontend": Layout,
+  "Backend": Server,
+  "Database": Database,
+  "Deployment & Tools": Terminal,
+  "Data Science & AI": Cpu,
+  "Programming Languages": Code2,
+};
 
 export default function Skills() {
-  pidCounter = 0;
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Stagger animate each stack group wrapper entry
+      gsap.fromTo(
+        ".stack-card",
+        { y: 40, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top 80%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+
+      // Stagger animate individual tech tags inside the active card
+      gsap.fromTo(
+        ".tech-tag",
+        { scale: 0.85, opacity: 0 },
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 0.5,
+          stagger: 0.05,
+          ease: "back.out(1.4)",
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top 75%",
+          },
+        }
+      );
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section id="skills" className="border-t border-line/70 py-24">
-      <SectionHeading eyebrow="system monitor" title="Skills" path="~$ htop --user=anuj" />
+    <section id="stacks" ref={containerRef} className="border-t border-line/70 py-24">
+      <SectionHeading eyebrow="infrastructure" title="Tech Stack" path="~$ neofetch --tech_stacks" />
 
-      <div className="overflow-hidden rounded-xl border border-line/80">
-        <div className="grid grid-cols-[50px_1.3fr_3fr_60px] bg-panel2 px-5 py-3 text-[11px] uppercase tracking-wider text-muted sm:grid-cols-[60px_1.2fr_3fr_70px]">
-          <span>pid</span>
-          <span>process</span>
-          <span>load</span>
-          <span className="text-right">mem%</span>
-        </div>
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {TECH_STACKS.map((stack) => {
+          const IconComponent = ICON_MAP[stack.category] || Layers;
+          
+          return (
+            <div 
+              key={stack.category}
+              className="stack-card opacity-0 overflow-hidden rounded-xl border border-line/80 bg-panel/40 p-6 backdrop-blur-sm transition-colors duration-300 hover:border-phosphor/40"
+            >
+              <div className="flex items-center gap-3 border-b border-line/50 pb-4 text-signal">
+                <IconComponent className="h-5 w-5 text-phosphor" />
+                <h3 className="text-xs uppercase tracking-wider font-semibold">
+                  {stack.category}
+                </h3>
+              </div>
 
-        {SKILL_GROUPS.map((g) => (
-          <div key={g.group}>
-            <div className="border-t border-line/70 bg-panel px-5 py-2 text-[11px] uppercase tracking-wider text-signal">
-              {g.group}
+              <div className="mt-4 flex flex-wrap gap-2">
+                {stack.items.map((item) => (
+                  <span
+                    key={item}
+                    className="tech-tag opacity-0 rounded border border-line bg-void px-2.5 py-1 text-xs font-mono text-muted transition-colors duration-200 hover:border-wire hover:text-phosphor-bright"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
             </div>
-            {g.items.map((item) => {
-              pidCounter += 1;
-              const pid = String(pidCounter).padStart(3, "0");
-              return (
-                <div
-                  key={item.name}
-                  className="grid grid-cols-[50px_1.3fr_3fr_60px] items-center border-t border-dotted border-line/60 px-5 py-2.5 text-[13px] sm:grid-cols-[60px_1.2fr_3fr_70px]"
-                >
-                  <span className="text-muted">{pid}</span>
-                  <span className="truncate pr-2">{item.name}</span>
-                  <div className="h-2 overflow-hidden rounded-sm border border-line bg-void">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${item.level}%` }}
-                      viewport={{ once: true, margin: "-40px" }}
-                      transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
-                      className="h-full bg-gradient-to-r from-phosphor to-wire"
-                    />
-                  </div>
-                  <span className="pl-3 text-right text-phosphor-bright">{item.level}%</span>
-                </div>
-              );
-            })}
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );
