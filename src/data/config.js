@@ -67,11 +67,11 @@ export const TECH_STACKS = [
   },
   {
     category: "Deployment & Tools",
-    items: ["Vercel", "Render", "Git", "GitHub", "Postman"],
+    items: ["Vercel", "Render", "Git", "GitHub", "Postman",'Docker'],
   },
   {
     category: "Data Science & AI",
-    items: ["NumPy", "Pandas", "Matplotlib", "Seaborn", "Scikit-Learn", "TensorFlow", "GenAI", "Agentic AI", "SciPy"],
+    items: ["NumPy", "Pandas", "Matplotlib", "Seaborn", "Scikit-Learn", "TensorFlow", "GenAI", "Agentic AI"],
   },
   {
     category: "Programming Languages",
