@@ -71,7 +71,7 @@ export default function Skills() {
 
   return (
     <section id="stacks" ref={containerRef} className="border-t border-line/70 py-24">
-      <SectionHeading eyebrow="infrastructure" title="Tech Stack" path="~$ neofetch --tech_stacks" />
+      <SectionHeading eyebrow="infrastructure" title="Tech Stacks" path="~$ neofetch --tech_stacks" />
 
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {TECH_STACKS.map((stack) => {

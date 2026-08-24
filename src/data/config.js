@@ -30,7 +30,7 @@ export const IDENTITY = {
 export const SOCIALS = [
   { label: "github.com/AnujrajShrestha", href: `https://github.com/${GITHUB_USERNAME}`, icon: "github" },
   { label: "facebook.com/anuj.shrestha.0.1", href: "https://www.facebook.com/anuj.shrestha.0.1", icon: "facebook" },
-  { label: "instagram.com/anuj.shrestha.0.1", href: "https://www.instagram.com/anuj.shrestha.0.1", icon: "instagram" },
+  { label: "instagram.com/anuj.shrestha.0.1", href: "https://www.instagram.com/_anuj.dev", icon: "instagram" },
 ];
 
 export const NAV_LINKS = [
