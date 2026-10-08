@@ -10,7 +10,7 @@ and the contribution graph are never hardcoded, they're fetched live.
 npm install
 npm run dev       # http://localhost:5173
 npm run build      # production build -> dist/
-npm run preview    # serve the build locally
+npm run dev    # serve the build locally
 ```
 
 ## Project structure
