@@ -8,7 +8,7 @@ export const GITHUB_USERNAME = "AnujrajShrestha";
 export const IDENTITY = {
   name: "Anuj Shrestha",
   handle: "Anuj",
-  location: "Butwal,Deepnagar, Nepal",
+  location: "Nepal,Butwal",
   roles: [
     "Student",
     "AI-ML Engineer",
